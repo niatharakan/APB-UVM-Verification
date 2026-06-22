@@ -11,7 +11,7 @@ import uvm_pkg::*;
 `include "apb_scoreboard.sv"
 `include "apb_agent.sv"
 `include "apb_env.sv"
-`include "my_test.sv"
+`include "apb_base_test.sv"
 
 interface apb_if;
   logic        PCLK;
@@ -52,6 +52,6 @@ module tb;
 
   initial begin
     uvm_config_db #(virtual apb_if)::set(null, "uvm_test_top.*", "vif", dut_if);
-    run_test("my_test");
+    run_test("apb_base_test");
   end
 endmodule
